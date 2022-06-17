@@ -7,14 +7,14 @@ import { useState, createContext } from "react";
 // ['menu', 'playing', 'finished']
 export const GameStateContext = createContext("")
 
-function App() {
+function App({title ,Question}) {
   const [gameState, setGameState] = useState("menu");
   const [userName, setUserName] = useState("");
   const [score, setScore] = useState(0);
 
   return (
     <div className="App">
-      <h1>Quiz App</h1>
+      <h1>{title}</h1>
       <GameStateContext.Provider
         value={{
           gameState,
@@ -23,6 +23,8 @@ function App() {
           setUserName,
           score,
           setScore,
+          Question
+          
         }}
       >
         {gameState === "menu" && <Menu />}

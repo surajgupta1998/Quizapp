@@ -9,7 +9,7 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState("");
 
-  const { score, setScore, gameState, setGameState } = useContext(
+  const { score, setScore, setGameState } = useContext(
     GameStateContext
   );
 

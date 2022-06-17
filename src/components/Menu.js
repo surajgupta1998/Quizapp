@@ -3,7 +3,7 @@ import React,{ useContext } from "react";
 import {GameStateContext }from"../App";
 
 function Menu() {
-  const { gameState, setGameState, userName, setUserName } = useContext( GameStateContext );
+  const {  setGameState, setUserName } = useContext( GameStateContext );
   return (
     <div className="Menu">
       <label>Enter Your Name:</label>
