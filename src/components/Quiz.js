@@ -1,7 +1,6 @@
 import "../App.css";
 import { Questions } from "../helpers/Question";
 import React,{ useState } from "react";
-
 import { useContext } from "react";
 import { GameStateContext } from "../App";
 
@@ -15,6 +14,7 @@ function Quiz() {
 
   const chooseOption = (option) => {
     setOptionChosen(option);
+    
   };
 
   const nextQuestion = () => {

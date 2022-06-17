@@ -3,14 +3,14 @@ import Menu from "./components/Menu";
 import Quiz from "./components/Quiz";
 import EndScreen from "./components/EndScreen";
 import { useState, createContext } from "react";
-// import { GameStateContext } from "./helpers/Contexts";
-// ['menu', 'playing', 'finished']
+
 export const GameStateContext = createContext("")
 
-function App({title ,Question}) {
+function App({title}) {
   const [gameState, setGameState] = useState("menu");
   const [userName, setUserName] = useState("");
   const [score, setScore] = useState(0);
+
 
   return (
     <div className="App">
@@ -22,13 +22,11 @@ function App({title ,Question}) {
           userName,
           setUserName,
           score,
-          setScore,
-          Question
-          
+          setScore          
         }}
       >
         {gameState === "menu" && <Menu />}
-        {gameState === "playing" && <Quiz />}
+        {gameState === "playing" && <Quiz Questions/>}
         {gameState === "finished" && <EndScreen />}
       </GameStateContext.Provider>
     </div>
